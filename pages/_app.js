@@ -1,10 +1,10 @@
 import Board from "../components/Board.jsx"
 import Keyboard from "../components/Keyboard.jsx"
-//import global styles
+import "../styles/globals.css"
 
 function MyApp() {
   return (
-  <div className = "app"> 
+  <div className = "App"> 
     <nav>
       <h1>Wordle</h1> 
     </nav> 

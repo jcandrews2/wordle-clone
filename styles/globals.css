@@ -1,26 +1,45 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+.App {
+  background-color: #121212;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  color: white;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.board {
+  width: 450px;
+  height: 550px;
+  border: 1px solid black;
+  display: grid;
+  place-items: center;
 }
 
-* {
-  box-sizing: border-box;
+.row {
+  flex: 33%;
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.letter {
+  flex: 33%;
+  height: 100%;
+  border: 1px solid grey;
+  margin: 5px;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  font-weight: bolder;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
+.keyboard {
+  width: 700px;
+  height: 300px;
+  margin-top: 60px;
+}
+

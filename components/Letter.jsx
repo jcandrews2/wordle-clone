@@ -1,6 +1,6 @@
 
-const Letter = (letterPosition, letterAttemptedValue) => {
-    return <div> Letter </div>; 
+const Letter = ({letterPosition, letterAttemptedValue}) => {
+    return <div>Letter </div>; 
 }
 
 export default Letter; 
