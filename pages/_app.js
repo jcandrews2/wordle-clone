@@ -10,6 +10,14 @@ function MyApp() {
   const [board, setBoard] = useState(DefaultBoard);
   const [solution, setSolution] = useState(null);
 
+  useEffect(() => {
+    fetch("http://localhost:8000/solution")
+      .then((res) => res.json())
+      .then((json) => {
+        console.log(json);
+      });
+  }, []);
+
   return (
     <div className="App">
       <div className="Nav">

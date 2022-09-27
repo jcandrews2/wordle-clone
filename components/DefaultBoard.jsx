@@ -1,9 +1,14 @@
-const boardDefault = [
-    ["","","","",""],
-    ["","","","",""],
-    ["","","","",""],
-    ["","","","",""],
-    ["","","","",""]
-]
 
-export default boardDefault;
+function BoardDefault(){
+    const boardDefault = [
+            ["","","","",""],
+            ["","","","",""],
+            ["","","","",""],
+            ["","","","",""],
+            ["","","","",""],
+            ["","","","",""],
+        ];
+    return boardDefault;
+}
+
+export default BoardDefault;

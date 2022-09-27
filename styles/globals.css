@@ -1,36 +1,71 @@
-.App {
+html { 
   background-color: #121212;
+}
+
+body {
+  margin: 0;
+}
+
+.App {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: 100vh;
   color: white;
 }
 
+nav {
+  height: 65px;
+  width: 100%;
+  border-bottom: 1px solid #3a3a3c;
+  display: grid;
+  place-items: center;
+}
+
+.Nav {
+  width: 100%;
+}
+
+h1 {
+  font-family: Helvetica, Arial, sans-serif;
+  color: white;
+  font-size: 30px;
+  display: table-cell;
+  vertical-align: middle; 
+}
+
+.h1{
+  height: 66px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .board {
-  width: 450px;
-  height: 550px;
-  border: 1px solid black;
+  width: 280px;
+  height: 340px;
+  padding: 10px;
   display: grid;
   place-items: center;
 }
 
 .row {
-  flex: 33%;
+  height: 52.5px;
+  width: 280px;
   display: flex;
   flex-direction: row;
-  margin: 5px;
+  justify-content: center;
+  align-items: center;
 }
 
 .letter {
-  flex: 33%;
-  height: 100%;
-  border: 1px solid grey;
-  margin: 5px;
-  display: grid;
-  place-items: center;
+  height: 48.5px;
+  width: 50px;
+  border: 2px solid #3a3a3c;
+  margin: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 30px;
   font-weight: bolder;
   color: white;
@@ -38,8 +73,31 @@
 }
 
 .keyboard {
-  width: 700px;
-  height: 300px;
-  margin-top: 60px;
+  width: 484px;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.keys {
+  width: 43px;
+  height: 58px;
+  margin: 2px;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  background-color: grey;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.keys:nth-child(11){
+  margin-left: 30px;
+}
+
+.keys:nth-child(20),
+.keys:nth-child(28){
+  width: 68px;
 }
 

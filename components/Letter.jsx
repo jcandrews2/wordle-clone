@@ -1,6 +1,11 @@
+import React, { useContext } from 'react';
+import { AppContext } from "../pages/_app.js";
 
-const Letter = ({letterPosition, letterAttemptedValue}) => {
-    return <div>Letter </div>; 
+function Letter({letterPosition, letterAttemptValue}){
+    const { board } = useContext(AppContext);
+    const letter = board[letterAttemptValue][letterPosition];
+
+    return <div className="letter">{letter}</div>; 
 }
 
-export default Letter; 
+export default Letter;
