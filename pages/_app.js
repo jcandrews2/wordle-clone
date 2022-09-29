@@ -8,13 +8,21 @@ export const AppContext = createContext();
 
 function MyApp() {
   const [board, setBoard] = useState(DefaultBoard);
+  const [currentAttempt, setCurrentAttempt] = useState({
+    attemptNumber: 0,
+    letterPosition: 0,
+  });
   const [solution, setSolution] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:8000/solution")
+    fetch("http://localhost:8000/words")
       .then((res) => res.json())
       .then((json) => {
         console.log(json);
+        //gets random solution from json server
+        const randomSolution =
+          json[Math.floor(Math.random() * json.length)].word;
+        setSolution(randomSolution);
       });
   }, []);
 
@@ -22,7 +30,7 @@ function MyApp() {
     <div className="App">
       <div className="Nav">
         <nav>
-          <div className="h1">
+          <div className="Header">
             <h1>Wordle</h1>
           </div>
         </nav>
@@ -31,11 +39,13 @@ function MyApp() {
         value={{
           board,
           setBoard,
+          currentAttempt,
+          setCurrentAttempt,
           solution,
           setSolution,
         }}
       >
-        <Board />
+        {solution ? <Board /> : null}
         <Keyboard />
       </AppContext.Provider>
     </div>

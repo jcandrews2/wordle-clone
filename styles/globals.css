@@ -34,7 +34,7 @@ h1 {
   vertical-align: middle; 
 }
 
-.h1{
+.Header{
   height: 66px;
   display: flex;
   justify-content: center;
@@ -101,3 +101,10 @@ h1 {
   width: 68px;
 }
 
+#correct {
+  background-color: green;
+}
+
+#almost {
+  background-color: orange;
+}
