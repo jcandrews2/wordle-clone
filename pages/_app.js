@@ -13,6 +13,7 @@ function MyApp() {
     letterPosition: 0,
   });
   const [solution, setSolution] = useState(null);
+  const [wordSet, setWordSet] = useState(null);
 
   useEffect(() => {
     fetch("http://localhost:8000/words")
@@ -23,6 +24,8 @@ function MyApp() {
         const randomSolution =
           json[Math.floor(Math.random() * json.length)].word;
         setSolution(randomSolution);
+        const wordArray = json.map((words) => words.word);
+        setWordSet(new Set(wordArray));
       });
   }, []);
 
@@ -43,6 +46,8 @@ function MyApp() {
           setCurrentAttempt,
           solution,
           setSolution,
+          wordSet,
+          setWordSet,
         }}
       >
         {solution ? <Board /> : null}

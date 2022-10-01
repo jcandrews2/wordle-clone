@@ -13,13 +13,12 @@ function Letter({ letterPosition, letterAttemptValue }) {
   const almost =
     !correct && letter !== "" && solution.toUpperCase().includes(letter);
 
-  const letterGrade =
+  let letterGrade =
     currentAttempt.attemptNumber > letterAttemptValue &&
     (correct ? "correct" : almost ? "almost" : "incorrect");
-  console.log(letterGrade);
 
   return (
-    <div className="letter" id={letterGrade}>
+    <div className="letter" id={letterGrade ? letterGrade : null}>
       {letter}
     </div>
   );
