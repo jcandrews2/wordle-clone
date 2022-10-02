@@ -9,6 +9,10 @@ npm run dev
 # or
 yarn dev
 ```
+The start the json server:
+```
+npx json-server --watch ./data/db.json --port 8000
+```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
