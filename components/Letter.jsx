@@ -4,8 +4,6 @@ import { AppContext } from "../pages/_app.js";
 function Letter({ letterPosition, letterAttemptValue }) {
   const { board, solution, currentAttempt } = useContext(AppContext);
 
-  console.log(solution);
-
   const letter = board[letterAttemptValue][letterPosition];
   //correct letter in the correct position
   const correct = solution[letterPosition].toUpperCase() === letter;

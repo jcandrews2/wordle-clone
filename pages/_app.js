@@ -2,6 +2,7 @@ import React, { useState, createContext, useEffect } from "react";
 import DefaultBoard from "../components/DefaultBoard.jsx";
 import Board from "../components/Board.jsx";
 import Keyboard from "../components/Keyboard.jsx";
+import GameOver from "../components/GameOver.jsx";
 import "../styles/globals.css";
 
 export const AppContext = createContext();
@@ -14,12 +15,15 @@ function MyApp() {
   });
   const [solution, setSolution] = useState(null);
   const [wordSet, setWordSet] = useState(null);
+  const [gameOver, setGameOver] = useState({
+    gameOver: false,
+    guessedWord: false,
+  });
 
   useEffect(() => {
     fetch("http://localhost:8000/words")
       .then((res) => res.json())
       .then((json) => {
-        console.log(json);
         //gets random solution from json server
         const randomSolution =
           json[Math.floor(Math.random() * json.length)].word;
@@ -48,10 +52,12 @@ function MyApp() {
           setSolution,
           wordSet,
           setWordSet,
+          gameOver,
+          setGameOver,
         }}
       >
         {solution ? <Board /> : null}
-        <Keyboard />
+        {gameOver.gameOver ? <GameOver /> : <Keyboard />}
       </AppContext.Provider>
     </div>
   );

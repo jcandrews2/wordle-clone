@@ -92,6 +92,12 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.gameOver {
+  display: flex;
+  flex-direction: column;
+  text-align: center; 
+}
+
 .keys:nth-child(11){
   margin-left: 30px;
 }
