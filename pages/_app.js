@@ -27,6 +27,7 @@ function MyApp() {
         //gets random solution from json server
         const randomSolution =
           json[Math.floor(Math.random() * json.length)].word;
+        console.log(randomSolution);
         setSolution(randomSolution);
         const wordArray = json.map((words) => words.word);
         setWordSet(new Set(wordArray));

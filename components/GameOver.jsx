@@ -3,6 +3,7 @@ import { AppContext } from "../pages/_app.js";
 
 function GameOver() {
   const { gameOver, setGameOver, solution } = useContext(AppContext);
+  //game over screen
   return (
     <div className="gameOver">
       <h1>

@@ -35,8 +35,6 @@ function Keys({ keyValue }) {
       } else {
         alert("Word not found!");
       }
-
-      //removes a letter if delete is pressed
     } else if (keyValue === "Delete") {
       if (currentAttempt.letterPosition === 0) return;
       const newBoard = [...board];
